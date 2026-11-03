@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+#include<vector>
+#include<algorithm>
+#include <climits>
+int main() {
+    int n = 4;
+int arr[4][4]={3,6,4,2,7,8,11,5,9,3,2,1,17,8,5,9};
+
+    int left = 0;
+    int right = n-1;
+    int top = 0;
+    int bottom = n-1;
+
+    while(top<=bottom && left<=right){
+
+        for(int j = left;j<=right;j++){
+        cout<<arr[top][j]<<"  "; 
+    }top++;
+
+    for(int i =top;i<=bottom;i++){
+        cout<<arr[i][right]<<"  ";
+    }right--;
+    if(top<=bottom){
+        for(int j = right;j>=left;j--){
+        cout<<arr[bottom][j]<<"  ";
+    }bottom--;        
+    }
+  if(left<=right){
+      for(int i = bottom;i>=top;i--){
+        cout<<arr[i][left]<<"  ";     
+    }left++;      
+  }   
+    }
+  
+}
